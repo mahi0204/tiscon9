@@ -34,6 +34,11 @@
           <input type="hidden" name="customerName" id="customerName" th:value="*{customerName}"/>
         </tr>
         <tr>
+          <th style="width: 40%">フリガナ</th>
+          <td><span th:text="*{customerNamefuri}"></span></td>
+          <input type="hidden" name="customerNamefuri" id="customerNamefuri" th:value="*{customerNamefuri}"/>
+        </tr>
+        <tr>
           <th>連絡先TEL</th>
           <td><span th:text="*{tel}"></span></td>
           <input type="hidden" name="tel" id="tel" th:value="*{tel}"/>
