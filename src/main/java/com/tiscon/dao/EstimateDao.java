@@ -37,8 +37,8 @@ public class EstimateDao {
      * @return 登録件数
      */
     public int insertCustomer(Customer customer) {
-        String sql = "INSERT INTO CUSTOMER(OLD_PREFECTURE_ID, NEW_PREFECTURE_ID, CUSTOMER_NAME, TEL, EMAIL, OLD_ADDRESS, NEW_ADDRESS,DELIVERYDAY)"
-                + " VALUES(:oldPrefectureId, :newPrefectureId, :customerName, :tel, :email, :oldAddress, :newAddress,:deliveryday)";
+        String sql = "INSERT INTO CUSTOMER(OLD_PREFECTURE_ID, NEW_PREFECTURE_ID, CUSTOMER_NAME, CUSTOMER_NAMEFURI, TEL, EMAIL, OLD_ADDRESS, NEW_ADDRESS,DELIVERYDAY)"
+                + " VALUES(:oldPrefectureId, :newPrefectureId, :customerName, :customerNamefuri, :tel, :email, :oldAddress, :newAddress,:deliveryday)";
         KeyHolder keyHolder = new GeneratedKeyHolder();
         int resultNum = parameterJdbcTemplate.update(sql, new BeanPropertySqlParameterSource(customer), keyHolder);
         customer.setCustomerId(keyHolder.getKey().intValue());
@@ -130,7 +130,7 @@ public class EstimateDao {
      */
     public int getPricePerTruck(int boxNum) {
         String sql = "SELECT PRICE FROM TRUCK_CAPACITY WHERE MAX_BOX >= :boxNum ORDER BY PRICE LIMIT 1";
-
+        
         SqlParameterSource paramSource = new MapSqlParameterSource("boxNum", boxNum);
         return parameterJdbcTemplate.queryForObject(sql, paramSource, Integer.class);
     }

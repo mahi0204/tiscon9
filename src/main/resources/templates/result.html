@@ -20,7 +20,17 @@
     <div class="page-title">概算お見積り結果</div>
     <div class="col-sm-12">
       <div class="text-center">
-        <div class="primary-text"><span th:text="${price}"></span>円</div>
+        <th:block th:if="${price == 0}">
+          <div class="primary-text"><span th:text="${price}"></span>円</div>
+          <div class="error-message" style="font-size:xx-large;">荷物がないので料金はかかりません。荷物は一つ以上記載してください</div>
+        </th:block>
+        <th:block th:if="${price == 200000}" >
+          <div class="error-message" style="font-size:xx-large;">トラックが2台以上必要ななめ、お電話での対応となります。</div>
+        </th:block>
+        <th:block th:if="${price != 200000 && price != 0}">
+          <div class="primary-text"><span th:text="${price}"></span>円</div>
+        </th:block>
+        <div class="text-center">※引越し日によって料金が変動します</div>
         <button type="submit" name="complete" class="btn btn-primary">詳細見積もり依頼へ</button>
       </div>
       <div class="sub-title">お客様情報</div>
@@ -32,6 +42,11 @@
           <th style="width: 40%">氏名</th>
           <td><span th:text="*{customerName}"></span></td>
           <input type="hidden" name="customerName" id="customerName" th:value="*{customerName}"/>
+        </tr>
+        <tr>
+          <th style="width: 40%">フリガナ</th>
+          <td><span th:text="*{customerNamefuri}"></span></td>
+          <input type="hidden" name="customerNamefuri" id="customerNamefuri" th:value="*{customerNamefuri}"/>
         </tr>
         <tr>
           <th>連絡先TEL</th>
@@ -115,7 +130,7 @@
       </table>
       <div class="form-group">
         <div class="text-center">
-          <button type="submit" name="backToConfirm" class="btn-back">TOPへ戻る</button>
+          <a class="btn btn-back" href="/" role="button">TOPへ戻る</a>
         </div>
       </div>
     </div>

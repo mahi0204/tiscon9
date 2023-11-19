@@ -17,6 +17,9 @@ public class UserOrderForm {
     private String customerName;
 
     @NotBlank
+    private String customerNamefuri;
+
+    @NotBlank
     @Numeric
     private String tel;
 
@@ -65,6 +68,13 @@ public class UserOrderForm {
         this.customerName = customerName;
     }
 
+    public String getCustomerNamefuri() {
+        return customerNamefuri;
+    }
+
+    public void setCustomerNamefuri(String customerNamefuri) {
+        this.customerNamefuri = customerNamefuri;
+    }
     public String getTel() {
         return tel;
     }
