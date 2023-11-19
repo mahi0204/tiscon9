@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS CUSTOMER
     EMAIL                           VARCHAR(256) NOT NULL,
     OLD_ADDRESS                     VARCHAR(200) NOT NULL,
     NEW_ADDRESS                     VARCHAR(200) NOT NULL,
+    DELIVERYDAY                     VARCHAR(10) NOT NULL,
     PRIMARY KEY (CUSTOMER_ID)
 );
 

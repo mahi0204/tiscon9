@@ -28,6 +28,8 @@ public class UserOrderDto {
 
     private boolean washingMachineInstallation;
 
+    private String deliveryday;
+
     public String getCustomerName() {
         return customerName;
     }
@@ -131,5 +133,12 @@ public class UserOrderDto {
 
     public void setWashingMachineInstallation(Boolean washingMachineInstallation) {
         this.washingMachineInstallation = washingMachineInstallation;
+    }
+    public String getDeliveryday() {
+        return deliveryday;
+    }
+
+    public void setDeliveryday(String deliveryday) {
+        this.deliveryday = deliveryday;
     }
 }

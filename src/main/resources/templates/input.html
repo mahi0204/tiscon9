@@ -109,6 +109,10 @@
             <option th:value="true" th:text="あり">あり</option>
           </select>
         </div>
+        <div class="form-group">
+          <label for="deliveryday">配達希望日(○○月○○日) </label>
+          <input type="text" id="deliveryday" name="deliveryday" th:field="*{deliveryday}" class="form-control" value="11月19日"/>
+        </div>
       </fieldset>
       <div class="form-group">
         <div class="text-center">

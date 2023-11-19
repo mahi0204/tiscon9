@@ -21,7 +21,7 @@ public class Customer implements Serializable {
     private String oldAddress;
 
     private String newAddress;
-
+    private String deliveryday;
     public int getCustomerId() {
         return customerId;
     }
@@ -91,5 +91,12 @@ public class Customer implements Serializable {
 
     public void setNewAddress(String newAddress) {
         this.newAddress = newAddress;
+    }
+    public String getDeliveryday() {
+        return deliveryday;
+    }
+
+    public void setDeliveryday(String deliveryday) {
+        this.deliveryday = deliveryday;
     }
 }

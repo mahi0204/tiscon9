@@ -26,7 +26,7 @@
       この内容でお見積りする場合は、「概算お見積もりをする」ボタンを押してください。
     </div>
     <ul th:if="${#fields.hasErrors('all')}">
-      <li th:each="err : ${#fields.errors('all')}" th:text="${err}"></li>
+      <li th:each="err : ${#fields.errors('all')}" th:text="${err}"class=“error-message”></li>
     </ul>
     <div class="col-sm-12">
       <div class="sub-title">お客様情報</div>
@@ -124,6 +124,11 @@
             <th>洗濯機の設置工事申し込み</th>
             <td><span th:text="*{washingMachineInstallation} ? 'あり' : 'なし'"></span></td>
             <input type="hidden" name="washingMachineInstallation" id="washingMachineInstallation" th:value="*{washingMachineInstallation}"/>
+          </tr>
+          <tr>
+            <th>配達希望日</th>
+            <td><span th:text="*{deliveryday}"></span></td>
+            <input type="hidden" name="deliveryday" id="deliveryday" th:value="*{deliveryday}"/>
           </tr>
         </tbody>
       </table>
